@@ -1,4 +1,4 @@
-/* Sistema font-stack per system-ui */
+/* Stile generale */
 body {
     margin: 0;
     padding: 0;
@@ -10,24 +10,24 @@ body {
     min-height: 100vh;
     background: linear-gradient(to bottom, #fff, #f0f0f0);
     text-align: center;
-    padding: 20px; /* Per evitare che i contenuti tocchino i bordi dello schermo */
+    padding: 20px;
 }
 
 h1 {
-    font-size: 5.5rem; /* Dimensione per desktop */
+    font-size: 5.5rem;
     font-weight: 700;
     color: #333;
     margin: 0 0 10px;
 }
 
 h1 span {
-    background: linear-gradient(to right, #e11d48, #fef9c3); /* Gradient da #e11d48 a giallo chiaro */
+    background: linear-gradient(to right, #e11d48, #fef9c3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 h2 {
-    font-size: 1.5rem; /* Dimensione per desktop */
+    font-size: 1.8rem;
     font-weight: 400;
     color: #666;
     margin: 10px 0;
@@ -39,24 +39,22 @@ iframe {
     width: 100%;
     max-width: 480px;
     height: auto;
-    aspect-ratio: 3 / 2; /* Garantisce proporzioni */
+    aspect-ratio: 3 / 2;
     margin: 30px 0;
 }
 
-/* Stile specifico per il link "Leggi l'archivio" */
 .archive-link {
-    font-size: 1.5rem; /* Dimensione del font per desktop */
-    color: #666; /* Stesso colore degli h2 */
-    text-decoration: underline; /* Sottolineatura di default */
+    font-size: 2.1rem;
+    color: #666;
+    text-decoration: underline;
     font-weight: 400;
     transition: text-decoration 0.3s ease;
 }
 
 .archive-link:hover {
-    text-decoration: none; /* Rimuove la sottolineatura su hover */
+    text-decoration: none;
 }
 
-/* Media Query per dispositivi più piccoli */
 @media (max-width: 768px) {
     h1 {
         font-size: 3rem;
@@ -65,7 +63,7 @@ iframe {
         font-size: 1.5rem;
     }
     .archive-link {
-        font-size: 1.7rem; /* Adattamento per tablet */
+        font-size: 1.8rem;
     }
 }
 
@@ -77,6 +75,6 @@ iframe {
         font-size: 1.2rem;
     }
     .archive-link {
-        font-size: 1.5rem; /* Adattamento per smartphone */
+        font-size: 1.5rem;
     }
 }
