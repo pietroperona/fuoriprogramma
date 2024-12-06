@@ -16,8 +16,10 @@ jobs:
     - name: Deploy to cPanel via FTP
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        ftp-server: ${{ secrets.FTP_HOST }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./ # Cambia se i file da caricare non sono nella radice
-        server-dir: /public_html # Cambia con la directory corretta
+        server: ${{ secrets.FTP_HOST }} # Host FTP
+        username: ${{ secrets.FTP_USERNAME }} # Username FTP
+        password: ${{ secrets.FTP_PASSWORD }} # Password FTP
+        port: 21 # Porta FTP (di default è 21, puoi personalizzarla)
+        protocol: ftp # Protocollo FTP
+        local-dir: ./ # Cartella locale con i file da caricare
+        server-dir: /public_html # Cartella sul server dove caricare i file
