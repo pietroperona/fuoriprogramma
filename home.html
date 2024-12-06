@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Substack</title>
+    <style>
+        /* Sistema font-stack per system-ui */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #fff, #f0f0f0);
+            text-align: center;
+            padding: 20px; /* Per evitare che i contenuti tocchino i bordi dello schermo */
+        }
+
+        h1 {
+            font-size: 5.5rem; /* Dimensione per desktop */
+            font-weight: 700;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        h1 span {
+            background: linear-gradient(to right, #e11d48, #fef9c3); /* Gradient da #e11d48 a giallo chiaro */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.5rem; /* Dimensione per desktop */
+            font-weight: 400;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        iframe {
+            border: 1px solid #EEE;
+            background: white;
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            aspect-ratio: 3 / 2; /* Garantisce proporzioni */
+            margin: 30px 0;
+        }
+
+        /* Stile specifico per il link "Leggi l'archivio" */
+        .archive-link {
+            font-size: 1.5rem; /* Dimensione del font per desktop */
+            color: #666; /* Stesso colore degli h2 */
+            text-decoration: underline; /* Sottolineatura di default */
+            font-weight: 400;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .archive-link:hover {
+            text-decoration: none; /* Rimuove la sottolineatura su hover */
+        }
+
+        /* Media Query per dispositivi più piccoli */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .archive-link {
+                font-size: 1.7rem; /* Adattamento per tablet */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            .archive-link {
+                font-size: 1.5rem; /* Adattamento per smartphone */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Fuori <span>Programma</span></h1>
+    <h2>Tecnologia, Startup, esperienze e viaggi: un contenitore di ispirazione, fuori programma.</h2>
+    <iframe src="https://pietroperona.substack.com/embed" frameborder="0" scrolling="no"></iframe>
+    <a href="https://pietroperona.substack.com/archive" target="_blank" class="archive-link">Leggi l'archivio</a>
+</body>
+</html>
