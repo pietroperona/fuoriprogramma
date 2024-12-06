@@ -13,17 +13,18 @@ body {
     padding: 20px;
 }
 
-h1 {
-    font-size: 5.5rem;
-    font-weight: 700;
-    color: #333;
-    margin: 0 0 10px;
+/* Stile per il testo normale */
+#h1-text-normal {
+    color: #333; /* Colore normale */
+    font-weight: 700; /* Mantieni il peso */
 }
 
-h1 span {
-    background: linear-gradient(to right, #e11d48, #fef9c3);
+/* Stile per il testo evidenziato */
+#h1-text-span {
+    background: linear-gradient(to right, #e11d48, #fef9c3); /* Gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 700;
 }
 
 h2 {
