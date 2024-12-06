@@ -7,7 +7,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 # 2. Forza www (o rimuovilo, se preferisci)
 RewriteCond %{HTTP_HOST} !^www\.
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^(.*)$ https://www.pietroperona.it/$1 [R=301,L]
 
 # 3. Disabilita l'accesso ai file sensibili
 <FilesMatch "\.(env|htaccess|ini|log|sh|sql|bak|old|json)$">
@@ -17,27 +17,32 @@ RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 # 4. Blocca la visualizzazione delle directory
 Options -Indexes
 
-# 7. Prevenzione hotlinking
+# 5. Compressione gzip
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# 6. Prevenzione hotlinking
 RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https?://(www\.)?tuodominio\.com [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?pietroperona\.it [NC]
 RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,NC,L]
 
-# 8. Pagina personalizzata per errori 404
+# 7. Pagina personalizzata per errori 404
 ErrorDocument 404 /404.html
 
-# 9. Prevenzione attacchi XSS
+# 8. Prevenzione attacchi XSS
 <IfModule mod_headers.c>
     Header set X-XSS-Protection "1; mode=block"
     Header set X-Content-Type-Options "nosniff"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# 10. Prevenzione clickjacking
+# 9. Prevenzione clickjacking
 <IfModule mod_headers.c>
     Header always append X-Frame-Options SAMEORIGIN
 </IfModule>
 
-# 11. Limita il crawling aggressivo
+# 10. Limita il crawling aggressivo
 <IfModule mod_rewrite.c>
     RewriteCond %{HTTP_USER_AGENT} (AhrefsBot|SemrushBot|MJ12bot) [NC]
     RewriteRule .* - [F,L]
