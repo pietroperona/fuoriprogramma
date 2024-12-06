@@ -55,6 +55,44 @@ iframe {
     text-decoration: none;
 }
 
+/* Stile specifico per la pagina 404 */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container h1 span {
+    background: linear-gradient(to right, #e11d48, #fef9c3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container h2 {
+    font-size: 1.8rem;
+    color: #666;
+    margin: 20px 0;
+}
+
+.container p {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.container a.home-link {
+    color: #e11d48;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.container a.home-link:hover {
+    color: #fef9c3;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 3rem;
@@ -64,6 +102,15 @@ iframe {
     }
     .archive-link {
         font-size: 1.8rem;
+    }
+    .container h1 {
+        font-size: 3rem;
+    }
+    .container h2 {
+        font-size: 1.5rem;
+    }
+    .container a.home-link {
+        font-size: 1.7rem;
     }
 }
 
@@ -75,6 +122,15 @@ iframe {
         font-size: 1.2rem;
     }
     .archive-link {
+        font-size: 1.5rem;
+    }
+    .container h1 {
+        font-size: 2.5rem;
+    }
+    .container h2 {
+        font-size: 1.2rem;
+    }
+    .container a.home-link {
         font-size: 1.5rem;
     }
 }

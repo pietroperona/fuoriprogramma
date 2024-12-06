@@ -1,7 +1,7 @@
 # Abilita il modulo di riscrittura
 RewriteEngine On
 
-# Redirect da HTTP a HTTPS
+# Forza HTTPS (opzionale: rimuovilo se non vuoi forzare HTTPS)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
@@ -17,16 +17,6 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 # Blocca la visualizzazione delle directory
 Options -Indexes
 
-# Compressione gzip
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
-</IfModule>
-
-# Prevenzione hotlinking
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https?://pietroperona\.it [NC]
-RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,NC,L]
-
 # Pagina personalizzata per errori 404
 ErrorDocument 404 /404.html
 
@@ -40,10 +30,4 @@ ErrorDocument 404 /404.html
 # Prevenzione clickjacking
 <IfModule mod_headers.c>
     Header always append X-Frame-Options SAMEORIGIN
-</IfModule>
-
-# Limita il crawling aggressivo
-<IfModule mod_rewrite.c>
-    RewriteCond %{HTTP_USER_AGENT} (AhrefsBot|SemrushBot|MJ12bot) [NC]
-    RewriteRule .* - [F,L]
 </IfModule>
