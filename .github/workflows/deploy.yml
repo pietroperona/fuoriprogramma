@@ -22,4 +22,4 @@ jobs:
         port: 21 # Porta FTP (di default è 21, puoi personalizzarla)
         protocol: ftp # Protocollo FTP
         local-dir: ./ # Cartella locale con i file da caricare
-        server-dir: /public_html/ # Cartella sul server dove caricare i file
+        server-dir: / # Cartella sul server dove caricare i file
