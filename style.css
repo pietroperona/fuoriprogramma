@@ -225,10 +225,8 @@ iframe {
    ========================================================== */
 
    .footer {
-    background: linear-gradient(to bottom, #fff, #f0f0f0); /* Stesso background del resto */
     padding: 20px 0;
     text-align: center;
-    border-top: 1px solid #eee;
 }
 
 .footer-text {
@@ -239,7 +237,7 @@ iframe {
 }
 
 .footer-link {
-    color: #e11d48;
+    color: #666;
     text-decoration: none;
     transition: color 0.3s ease;
 }
