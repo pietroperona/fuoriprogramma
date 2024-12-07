@@ -225,7 +225,7 @@ iframe {
    ========================================================== */
 
    .footer {
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #fff, #f0f0f0); /* Stesso background del resto */
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid #eee;
@@ -246,4 +246,57 @@ iframe {
 
 .footer-link:hover {
     color: #c2185b;
+}
+
+/* ==========================================================
+   STILE PER LA PAGINA CREDITS
+   ========================================================== */
+
+.credits-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #fff, #f0f0f0); /* Stesso background */
+    padding: 20px;
+}
+
+.credits-content h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.credits-content p {
+    font-size: 1.4rem;
+    color: #444;
+    margin: 10px 0;
+}
+
+.credits-link {
+    color: #e11d48;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.credits-link:hover {
+    color: #c2185b;
+}
+
+.credits-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #e11d48;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.credits-button:hover {
+    background-color: #c2185b;
 }
