@@ -149,3 +149,45 @@ iframe {
         font-size: 1.5rem; /* Ridotto per smartphone */
     }
 }
+
+/* Stile per le sezioni */
+section {
+    margin-top: 40px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.6rem; /* Desktop */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.6rem; /* Desktop */
+    font-weight: 400;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Media query per tablet */
+@media (max-width: 768px) {
+    section h2 {
+        font-size: 2.2rem;
+    }
+    section p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Media query per smartphone */
+@media (max-width: 480px) {
+    section h2 {
+        font-size: 2rem;
+    }
+    section p {
+        font-size: 1.2rem;
+    }
+}
