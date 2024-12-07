@@ -56,7 +56,7 @@ iframe {
 
 /* Stile per il link */
 .archive-link {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     color: #666;
     text-decoration: underline;
     font-weight: 400;
@@ -115,7 +115,7 @@ iframe {
         font-size: 1.5rem; /* Ridotto per tablet */
     }
     .archive-link {
-        font-size: 1.8rem; /* Ridotto per tablet */
+        font-size: 1.6rem; /* Ridotto per tablet */
     }
     .container h1 {
         font-size: 3rem; /* Ridotto per tablet */
@@ -137,7 +137,7 @@ iframe {
         font-size: 1.2rem; /* Ridotto per smartphone */
     }
     .archive-link {
-        font-size: 1.5rem; /* Ridotto per smartphone */
+        font-size: 1.3rem; /* Ridotto per smartphone */
     }
     .container h1 {
         font-size: 2.5rem; /* Ridotto per smartphone */
