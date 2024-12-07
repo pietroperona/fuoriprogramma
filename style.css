@@ -1,5 +1,8 @@
-/* Stile generale */
-body {
+/* ==========================================================
+   STILE GENERALE
+   ========================================================== */
+
+   body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -13,6 +16,10 @@ body {
     padding: 20px;
 }
 
+/* ==========================================================
+   STILE H1 E H2
+   ========================================================== */
+
 /* Stile per H1 */
 h1 {
     font-size: 5.5rem; /* Dimensione per desktop */
@@ -21,15 +28,15 @@ h1 {
     margin: 0 0 10px;
 }
 
-/* Testo normale (no gradient) */
+/* Testo normale di H1 */
 #h1-text-normal {
-    color: #333; /* Colore normale */
-    font-weight: 700; /* Mantieni il peso */
+    color: #333;
+    font-weight: 700;
 }
 
-/* Testo evidenziato (gradient) */
+/* Testo evidenziato di H1 con gradient */
 #h1-text-span {
-    background: linear-gradient(to right, #e11d48, #fef9c3); /* Gradient */
+    background: linear-gradient(to right, #e11d48, #fef9c3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
@@ -43,6 +50,10 @@ h2 {
     margin: 10px 0;
 }
 
+/* ==========================================================
+   STILE SPECIFICO PER LINK E IFRAME
+   ========================================================== */
+
 /* Stile per iframe */
 iframe {
     border: 1px solid #EEE;
@@ -54,7 +65,7 @@ iframe {
     margin: 30px 0;
 }
 
-/* Stile per il link */
+/* Stile per il link "Leggi l'archivio" */
 .archive-link {
     font-size: 1.8rem;
     color: #666;
@@ -68,7 +79,10 @@ iframe {
     color: #e11d48;
 }
 
-/* Stile specifico per la pagina 404 */
+/* ==========================================================
+   STILE SPECIFICO PER PAGINA 404
+   ========================================================== */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -106,6 +120,10 @@ iframe {
     color: #fef9c3;
 }
 
+/* ==========================================================
+   RESPONSIVITÀ: TABLET E SMARTPHONE
+   ========================================================== */
+
 /* Media query per tablet */
 @media (max-width: 768px) {
     h1 {
@@ -121,10 +139,10 @@ iframe {
         font-size: 3rem; /* Ridotto per tablet */
     }
     .container h2 {
-        font-size: 1.5rem; /* Ridotto per tablet */
+        font-size: 1.5rem;
     }
     .container a.home-link {
-        font-size: 1.7rem; /* Ridotto per tablet */
+        font-size: 1.7rem;
     }
 }
 
@@ -134,60 +152,80 @@ iframe {
         font-size: 2.5rem; /* Ridotto per smartphone */
     }
     h2 {
-        font-size: 1.2rem; /* Ridotto per smartphone */
+        font-size: 1.2rem;
     }
     .archive-link {
         font-size: 1.3rem; /* Ridotto per smartphone */
     }
     .container h1 {
-        font-size: 2.5rem; /* Ridotto per smartphone */
+        font-size: 2.5rem;
     }
     .container h2 {
-        font-size: 1.2rem; /* Ridotto per smartphone */
-    }
-    .container a.home-link {
-        font-size: 1.5rem; /* Ridotto per smartphone */
-    }
-}
-
-/* Stile per le sezioni */
-section {
-    margin-top: 40px;
-    padding: 0 20px;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 2.6rem; /* Desktop */
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-section p {
-    font-size: 1.6rem; /* Desktop */
-    font-weight: 400;
-    color: #444;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-/* Media query per tablet */
-@media (max-width: 768px) {
-    section h2 {
-        font-size: 2.2rem;
-    }
-    section p {
-        font-size: 1.4rem;
-    }
-}
-
-/* Media query per smartphone */
-@media (max-width: 480px) {
-    section h2 {
-        font-size: 2rem;
-    }
-    section p {
         font-size: 1.2rem;
     }
+    .container a.home-link {
+        font-size: 1.5rem;
+    }
+}
+
+/* ==========================================================
+   STILE SPECIFICO PER LE SEZIONI
+   ========================================================== */
+
+/* Contenitore generale per le sezioni */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Spaziatura tra le sezioni */
+.pt-20 {
+    padding-top: 20px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.space-y-20 > * + * {
+    margin-top: 20px;
+}
+.space-y-16 > * + * {
+    margin-top: 16px;
+}
+
+/* Stile per i titoli delle sezioni */
+h3 {
+    font-size: 2.6rem; /* Base desktop */
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+@media (min-width: 1024px) {
+    h3 {
+        font-size: 4.2rem; /* Desktop maggiore */
+    }
+}
+
+/* Testo principale nelle sezioni */
+.editor {
+    font-size: 1.6rem; /* Base desktop */
+    line-height: 1.8;
+    color: #444;
+    text-align: center;
+}
+@media (min-width: 1024px) {
+    .editor {
+        font-size: 2.6rem; /* Desktop maggiore */
+    }
+}
+
+/* Stile per i link nelle sezioni */
+.editor a {
+    color: #e11d48;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.editor a:hover {
+    color: #fef9c3;
 }
