@@ -5,7 +5,7 @@
    body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,18 +14,20 @@
     background: linear-gradient(to bottom, #fff, #f0f0f0);
     text-align: center;
     padding: 20px;
+    overflow-x: hidden; /* Previene lo scrolling orizzontale */
 }
 
 /* ==========================================================
-   STILE H1 E H2
+   STILE PER H1 E H2
    ========================================================== */
 
 /* Stile per H1 */
 h1 {
-    font-size: 5.5rem; /* Dimensione per desktop */
+    font-size: 5.5rem; /* Desktop */
     font-weight: 700;
     color: #333;
     margin: 0 0 10px;
+    text-align: center;
 }
 
 /* Testo normale di H1 */
@@ -44,17 +46,24 @@ h1 {
 
 /* Stile per H2 */
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Desktop */
     font-weight: 400;
     color: #666;
     margin: 10px 0;
+    text-align: center;
 }
 
 /* ==========================================================
    STILE SPECIFICO PER LINK E IFRAME
    ========================================================== */
 
-/* Stile per iframe */
+/* Contenitore per iframe */
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0; /* Maggiore spazio sopra e sotto */
+}
+
 iframe {
     border: 1px solid #EEE;
     background: white;
@@ -62,110 +71,26 @@ iframe {
     max-width: 480px;
     height: auto;
     aspect-ratio: 3 / 2;
+}
+
+/* Contenitore per il link */
+.link-container {
+    display: flex;
+    justify-content: center;
     margin: 30px 0;
 }
 
-/* Stile per il link "Leggi l'archivio" */
 .archive-link {
     font-size: 1.8rem;
     color: #666;
     text-decoration: underline;
     font-weight: 400;
-    transition: text-decoration 0.3s ease;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .archive-link:hover {
-    text-decoration: none;
-    color: #e11d48;
-}
-
-/* ==========================================================
-   STILE SPECIFICO PER PAGINA 404
-   ========================================================== */
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-
-.container h1 span {
-    background: linear-gradient(to right, #e11d48, #fef9c3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.container h2 {
-    font-size: 1.8rem;
-    color: #666;
-    margin: 20px 0;
-}
-
-.container p {
-    font-size: 1.2rem;
-    color: #444;
-}
-
-.container a.home-link {
     color: #e11d48;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.container a.home-link:hover {
-    color: #fef9c3;
-}
-
-/* ==========================================================
-   RESPONSIVITÀ: TABLET E SMARTPHONE
-   ========================================================== */
-
-/* Media query per tablet */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3rem; /* Ridotto per tablet */
-    }
-    h2 {
-        font-size: 1.5rem; /* Ridotto per tablet */
-    }
-    .archive-link {
-        font-size: 1.6rem; /* Ridotto per tablet */
-    }
-    .container h1 {
-        font-size: 3rem; /* Ridotto per tablet */
-    }
-    .container h2 {
-        font-size: 1.5rem;
-    }
-    .container a.home-link {
-        font-size: 1.7rem;
-    }
-}
-
-/* Media query per smartphone */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2.5rem; /* Ridotto per smartphone */
-    }
-    h2 {
-        font-size: 1.2rem;
-    }
-    .archive-link {
-        font-size: 1.3rem; /* Ridotto per smartphone */
-    }
-    .container h1 {
-        font-size: 2.5rem;
-    }
-    .container h2 {
-        font-size: 1.2rem;
-    }
-    .container a.home-link {
-        font-size: 1.5rem;
-    }
 }
 
 /* ==========================================================
@@ -177,55 +102,120 @@ iframe {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-}
-
-/* Spaziatura tra le sezioni */
-.pt-20 {
-    padding-top: 20px;
-}
-.pb-20 {
-    padding-bottom: 20px;
-}
-.space-y-20 > * + * {
-    margin-top: 20px;
-}
-.space-y-16 > * + * {
-    margin-top: 16px;
-}
-
-/* Stile per i titoli delle sezioni */
-h3 {
-    font-size: 2.6rem; /* Base desktop */
-    font-weight: 700;
-    color: #000;
     text-align: center;
 }
-@media (min-width: 1024px) {
-    h3 {
-        font-size: 4.2rem; /* Desktop maggiore */
-    }
+
+/* Titoli delle sezioni */
+.section-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Testo principale nelle sezioni */
-.editor {
-    font-size: 1.6rem; /* Base desktop */
+/* Paragrafi delle sezioni */
+.section-content p {
+    font-size: 1.4rem;
+    font-weight: 400; /* Ridotto il peso del font */
     line-height: 1.8;
     color: #444;
-    text-align: center;
-}
-@media (min-width: 1024px) {
-    .editor {
-        font-size: 2.6rem; /* Desktop maggiore */
-    }
+    margin-bottom: 16px;
+    text-align: left; /* Allineato a sinistra */
 }
 
-/* Stile per i link nelle sezioni */
-.editor a {
+/* ==========================================================
+   SEZIONE UNIFICATA
+   ========================================================== */
+
+.unified-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.unified-section .section-content {
+    margin-top: 40px;
+}
+
+/* ==========================================================
+   STILE PER LA PAGINA 404
+   ========================================================== */
+
+.container-404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container-404 h1 span {
+    background: linear-gradient(to right, #e11d48, #fef9c3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container-404 h2 {
+    font-size: 1.8rem;
+    color: #666;
+    margin: 20px 0;
+}
+
+.container-404 p {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.container-404 a.home-link {
     color: #e11d48;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
-.editor a:hover {
+.container-404 a.home-link:hover {
     color: #fef9c3;
+}
+
+/* ==========================================================
+   RESPONSIVITÀ: TABLET E SMARTPHONE
+   ========================================================== */
+
+/* Media query per tablet */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .section-content p {
+        font-size: 1.3rem;
+    }
+    .archive-link {
+        font-size: 1.4rem;
+    }
+}
+
+/* Media query per smartphone */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .section-content p {
+        font-size: 1.2rem;
+    }
+    .archive-link {
+        font-size: 1.2rem;
+    }
 }
