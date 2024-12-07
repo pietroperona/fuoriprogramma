@@ -219,3 +219,31 @@ iframe {
         font-size: 1.2rem;
     }
 }
+
+/* ==========================================================
+   STILE PER IL FOOTER
+   ========================================================== */
+
+   .footer {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer-text {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-link {
+    color: #e11d48;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #c2185b;
+}
